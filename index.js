@@ -3,5 +3,13 @@ const express = require('express');
 const app = express();
 
 app.use("/",(req,res)=>{
-    res.send("Hellow");
-}).listen(3000);
+    try {
+        const { name } = req.body;
+        res.send(200,`Hello ${name}`);
+    } catch (error) {
+        res.send(500,"Internal Server Error");
+    }
+    
+});
+
+app.listen(3000);
