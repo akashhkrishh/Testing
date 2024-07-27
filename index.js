@@ -3,8 +3,12 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
+
+app.get("/",(req,res)=>{
+    res.send("Service Running")
+})
 app.post("/",(req,res)=>{
     try {
         const { name } = req.body;
