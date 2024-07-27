@@ -1,5 +1,6 @@
 const express = require('express');
 
+
 const app = express();
 
 app.post("/",(req,res)=>{
@@ -8,7 +9,7 @@ app.post("/",(req,res)=>{
         
         res.send(200,`Hello ${name}`);
     } catch (error) {
-        res.send(500,"Internal Server Error");
+        res.send(500, error);
     }
     
 });
